@@ -1,5 +1,5 @@
 ---
-title: Spring camp 2017
+title: Spring camp 2017 참석 메모
 date: 2017-04-22
 ---
 
