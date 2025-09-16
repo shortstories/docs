@@ -6,7 +6,7 @@
 
 모든 토큰은 ID, name, type, rule set을 가진다.
 
-```text
+```
 // Body
 {
   "Name": "/* name */",
@@ -27,7 +27,7 @@ type은 client, management 두 가지가 있다. client는 ACL rules를 수정�
 
 #### Request
 
-```text
+```
 PUT /v1/acl/create
 {
   "Name": "/* name */",
@@ -38,7 +38,7 @@ PUT /v1/acl/create
 
 #### Response
 
-```text
+```
 {
   "ID": "adf4238a-882b-9ddc-4a9d-5b6758e4159e"
 }
@@ -93,24 +93,24 @@ PUT /v1/acl/create
 * 기본적으로 HCL 사용 [https://github.com/hashicorp/hcl/](https://github.com/hashicorp/hcl/)
 * policy : read, write, deny
   * write는 read를 포함하며 write만 허용하는 방법은 없음
-* 기본 값을 지정하고 싶으면 비어있는 String을 주면 됨. \(ex\) key "" { }\)
+* 기본 값을 지정하고 싶으면 비어있는 String을 주면 됨.
 * rule이 지정되지 않으면 `acl_default_policy`를 따름
 * 만약 일부 겹치는 부분이 생길 땐 가장 길고 상세한 prefix를 가지는 policy를 따름
 
 #### Key Policy
 
-* key "prefix" { policy }
+* key "prefix" \{ policy \}
 
 #### Service Policy
 
-* service "service name" { policy }
+* service "service name" \{ policy \}
 * read는 service prefix의 discovery에 대한 접근을 제한할 수 있음
 
 #### User event Policy
 
-* event "event name" { policy }
+* event "event name" \{ policy \}
 
 #### Prepared query Policy
 
-* query "query name" { policy }
+* query "query name" \{ policy \}
 
