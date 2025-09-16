@@ -148,7 +148,7 @@ filebeat:
 
 **5. log rolling을 할 때, 파일 이름이 계속 바뀌게 되는데 새로운 파일로 인식하지 말아야 함.** -&gt; filebeat가 파일을 이미 읽은 상태에서 파일 이름을 변경하여 같은 내용이 아웃풋에 쌓이는지 확인 -&gt; filebeat가 열고 있는 상황에서는 파일의 변경, 삭제가 불가능. \(Text busy file\) -&gt; ignore\_older을 짧게\(1s\)로 설정하여 변경 가능하게끔 만듬 -&gt; 파일 이름을 변경하고, `echo "test line" >> ./ignored_log_file.log` 등을 통해 테스트 해본 결과 ignore 되었던 파일의 이름이 수정되더라도 변경된 부분만 인식하는 걸 확인.
 
-**6. filebeat에서 파일을 읽고 있을 때, log rolling이 정상적으로 일어날 수 있어야 함.** -&gt; 테스트 log4j rolling property MaxFileSize=5KB, MaxBackupIndex=5 -&gt; 정상적인 상황 ![](.gitbook/assets/undefined.PNG) -&gt; filebeat를 실행해놓은 상황 ~~-&gt; filebeat에서 파일을 읽고 있을 때에는 log4j의 log rolling이 정상적으로 일어나지 않고, 기존의 파일에다가 계속해서 써넣는 것을 확인할 수 있음.~~
+**6. filebeat에서 파일을 읽고 있을 때, log rolling이 정상적으로 일어날 수 있어야 함.** -&gt; 테스트 log4j rolling property MaxFileSize=5KB, MaxBackupIndex=5 -&gt; 정상적인 상황 ![](.gitbook/assets/undefined-1.PNG) -&gt; filebeat를 실행해놓은 상황 ~~-&gt; filebeat에서 파일을 읽고 있을 때에는 log4j의 log rolling이 정상적으로 일어나지 않고, 기존의 파일에다가 계속해서 써넣는 것을 확인할 수 있음.~~
 
 #### 문제점
 

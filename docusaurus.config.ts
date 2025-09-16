@@ -142,6 +142,11 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+
+    markdown: {
+      format: 'detect',
+      mermaid: true,
+    },
   } satisfies Preset.ThemeConfig,
 };
 
