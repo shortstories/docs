@@ -1,41 +1,10 @@
-# Website
+# Introduction
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+2016 ~ ∞
 
-## Installation
+개발자로 일하며 배우고 공부하게 된 것들 정리.
 
-```bash
-yarn
-```
+## [kwonsci@gmail.com](https://github.com/shortstories/study/tree/8102ac93b4d4767407b36758e002beb9ec471e48/kwonsci@gmail.com)
 
-## Local Development
+## [ohchang.kwon@navercorp.com](https://github.com/shortstories/study/tree/8102ac93b4d4767407b36758e002beb9ec471e48/ohchang.kwon@navercorp.com)
 
-```bash
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-```bash
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

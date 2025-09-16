@@ -1,8 +1,8 @@
 # Open Container Initiative Image
 
-{% embed url="https://github.com/opencontainers/image-spec" %}
+- https://github.com/opencontainers/image-spec
 
-&#x20;oci image = manifest + image index (optional) + fs layers + configuration
+oci image = manifest + image index (optional) + fs layers + configuration
 
 ### OCI Image media types
 

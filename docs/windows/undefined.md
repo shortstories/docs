@@ -51,7 +51,7 @@ $ sudo apt install build-essential zsh
 
 #### 키보드 shift space, 한영키 동시에 먹히게 만들기
 
-{% file src="../.gitbook/assets/shift-space_default-.reg" %}
+[shift-space_default-.reg](../.gitbook/assets/shift-space_default-.reg)
 
 #### Golang 환경 세팅&#x20;
 
@@ -73,11 +73,11 @@ $ sudo apt install build-essential zsh
 3. oss, github에 방금 생성된 public key를  deploy key로  등록
 4. windows cmd, wsl 둘다 아래 git config 명령어 실행
 
-<pre><code>$ git config --global core.fileMode false
-<strong>$ git config --global core.autocrlf input
-</strong>$ git config --global core.eol lf
+```bash
+$ git config --global core.fileMode false
+$ git config --global core.autocrlf input
+$ git config --global core.eol lf
 $ git config --global credential.helper store
 $ git config --global url.ssh://git@oss.navercorp.com/.insteadOf https://oss.navercorp.com/
 $ git config --global url.ssh://git@github.com/.insteadOf https://github.com/
-</code></pre>
-
+```

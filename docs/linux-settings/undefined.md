@@ -43,9 +43,7 @@ volume /mnt/btr_pool
   subvolume rootfs
 ```
 
-여기에 맞추기 위해 기본 구조는 btrbk에서 권장하는 방식을 이용함
-
-{% embed url="https://github.com/digint/btrbk/blob/master/doc/FAQ.md#how-should-i-organize-my-btrfs-filesystem" %}
+여기에 맞추기 위해 기본 구조는 btrbk에서 권장하는 방식을 이용함 (https://github.com/digint/btrbk/blob/master/doc/FAQ.md#how-should-i-organize-my-btrfs-filesystem)
 
 원래 홈서버로 aoostar gem12 8845hs버전을 사용했었는데 전원부가 좀 부실한지 io쪽이 몇번 나갔다 들어오다 하더니 반년만에 마침내 사망해버림. 직구라 AS? 그런거 없음. 공식 구매처에 물어보니 해외에서 AS보내는건  받지않고 주변에 중국인이 있으면 부탁해서 AS 보내고 받으면 된다는데 그런게 어딨음? 사실상 복구 불가능 판정...
 

@@ -1,0 +1,35 @@
+/* CSS Module extracted from inline <style> in IndexPage.tsx
+   Global class names are preserved using :global selector wrappers.
+*/
+
+:global(body), :global(html) { -ms-scroll-chaining:none; overscroll-behavior:none; margin:0; padding:0; }
+:global(.min-h-full) { min-height:100vh; }
+:global(.flex-h-center) { display:flex; justify-content:center; }
+:global(.flex-both-center) { display:flex; justify-content:center; align-items:center; }
+:global(.flex-wrap) { flex-wrap:wrap; }
+:global(.mt-16) { margin-top:16px; }
+:global(.mt-24) { margin-top:24px; }
+:global(.mt-48) { margin-top:48px; }
+:global(.relative) { position:relative; }
+:global(.page-full-wrap) { width:680px; z-index:10; padding-bottom:176px; }
+:global(.page-image) { position:fixed; left:0; top:0; width:100vw; height:100vh; object-fit:cover; object-position:center; }
+:global(.background-overlay) { position:fixed; width:100%; height:100%; z-index:0; }
+:global(.display-image) { width:96px; height:96px; display:block; border-radius:50%; object-fit:cover; }
+:global(.page-title) { margin-bottom:0; font-size:18px; font-weight:700; }
+:global(.page-text-font) { font-family:'Inter', sans-serif; text-transform:none; }
+:global(.page-text-color) { color:#1F365C; }
+:global(.page-social) { display:block; cursor:pointer; margin:0 12px 12px; }
+:global(.page-social svg) { width:28px; height:28px; }
+:global(.social-icon-anchor) { position:absolute; width:100%; height:100%; left:0; top:0; }
+:global(.page-item-wrap) { transition: transform .15s cubic-bezier(.17,.67,.29,2.71) 0s; margin:16px 0; }
+:global(.page-item-wrap:last-child) { margin-bottom:0; }
+:global(.page-item-wrap:hover) { transform: translate3d(0,0,0) scale(1.015); }
+:global(.page-item) { box-sizing:border-box; position:absolute; left:0; top:0; width:100%; height:100%; z-index:-1; border:0 solid #fff; background:#fff; border-radius:8px; box-shadow:0 6px 14px -6px rgba(24,39,75,.12), 0 10px 32px -4px rgba(24,39,75,.1), inset 0 0 2px 1px rgba(24,39,75,.05); }
+:global(.page-item-each) { text-decoration:none; overflow:hidden; z-index:10; box-sizing:border-box; color:#1F365C; font-family:'Inter', sans-serif; font-size:16px; font-weight:500; text-transform:none; border-radius:8px; min-height:60px; width:100%; position:relative; }
+:global(.py-10) { padding:10px; }
+:global(.link-each-image) { width:43px; height:43px; position:absolute; left:9px; object-fit:cover; border-radius:8px; }
+:global(.item-title) { width:55%; word-break:break-word; margin-left:60px; }
+:global(.text-center) { text-align:center; }
+@media (max-width:768px){
+  :global(.page-full-wrap) { width:90%; }
+}
