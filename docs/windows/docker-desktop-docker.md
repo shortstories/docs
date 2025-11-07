@@ -32,23 +32,18 @@ systemd=true
 ```
 
 windows의 `%USERPROFILE%\.wslconfig` 파일에 아래 내용 넣기. 이렇게 해야 wsl2 인스턴스가 무제한적으로 메모리를 차지하는 것을 막을 수 있음.
+networkingMode의 경우 기본옵션은 nat임. mirrored로 해주면 wsl2의 네트워크가 호스트의 네트워크와 동일한 것처럼 사용할 수 있음.
+이렇게 해야 윈도우 호스트나 wsl1에서 docker나 k3s로 접근 가능해짐.
 
 ```toml
 [wsl2]
-memory=8GB 
+memory=8GB
+networkingMode=mirrored
 ```
 
 이후 `wsl.exe -t Ubuntu-20.04` 명령어로 재시작.
 
-마지막으로 아래 명령어를 파일로 만든 다음 관리자 권한을 가진 cmd 또는 powershell을 통해 실행. 방금 생성한 ubuntu wsl2 인스턴스에 2375, 6443 포트를 포워딩해주는 단계임.
-
-```powershell
-for /f "tokens=1" %%a in ('wsl -d Ubuntu-20.04 sh -c "hostname -I"') do set wsl_ip=%%a
-netsh.exe interface portproxy add v4tov4 listenport=2375 connectport=2375 connectaddress=$wsl_ip
-netsh.exe interface portproxy add v4tov4 listenport=6443 connectport=6443 connectaddress=$wsl_ip
-```
-
-다음부터 docker가 필요하면 터미널에서 새로 만든 ubuntu를 실행하면 됨. 단, 관리자 계정으로 실행하도록 설정 수정 필요.
+다음부터 docker가 필요하면 터미널에서 새로 만든 ubuntu를 실행하면 됨.
 
 ### 2. docker daemon 설치
 
@@ -90,13 +85,18 @@ sudo apt-get update && sudo apt-get install -y docker-ce docker-ce-cli container
 }
 ```
 
-
-
-`sudo vi /lib/systemd/system/docker.service` 명령어를 실행하여 아래와 같이 수정.
+`sudo systemctl edit docker` 명령어를 실행하여 아래와 같이 수정.
 
 ```systemd
-# ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+### Editing /etc/systemd/system/docker.service.d/override.conf
+### Anything between here and the comment below will become the contents of the drop-in file
+
+[Service]
+ExecStart=
 ExecStart=/usr/bin/dockerd --containerd=/run/containerd/containerd.sock
+
+### Edits below this comment will be discarded
+#...
 ```
 
 그 다음 아래 명령어로 재시작 및 실행 확인
@@ -112,19 +112,7 @@ sudo netstat -lntp | grep dockerd
 ```bash
 curl -sfL https://get.k3s.io | sh -s - --docker
 ```
-
-### 4. profile 설정
-
-`~/.profile` 파일에 아래 내용 추가
-
-```bash
-wsl_ip=$(ip addr show eth0 | grep -oP "(?<=inet\s)\d+(\.\d+){3}")
-export DOCKER_HOST=tcp://$wsl_ip:2375
-netsh.exe interface portproxy add v4tov4 listenport=2375 connectport=2375 connectaddress=$wsl_ip
-netsh.exe interface portproxy add v4tov4 listenport=6443 connectport=6443 connectaddress=$wsl_ip
-```
-
-### 5. k3s 서버 정보 및 인증 정보 가져오기
+### 4. k3s 서버 정보 및 인증 정보 가져오기
 
 `/etc/rancher/k3s/k3s.yaml` 파일 내용 참조
 
