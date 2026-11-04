@@ -70,7 +70,7 @@ const pageLinks: PageLink[] = [
   { title: 'Torrent - Transmission', href: 'https://torrent.ocha.ng', img: require('@site/static/img/links/transmission.png').default, alt: 'Torrent - Transmission' },
   { title: 'DNS - AdGuard Home', href: 'https://adguard.ocha.ng', img: require('@site/static/img/links/adguard.png').default, alt: 'AdGuard Home' },
   { title: 'Monitoring - Grafana', href: 'https://grafana.ocha.ng', img: require('@site/static/img/links/grafana.png').default, alt: 'Monitoring - Grafana' },
-  { title: 'DSH', href: 'https://ai.ocha.ng', img: require('@site/static/img/links/deepseek.png').default, alt: 'DSH - DeepSeek Harness' }
+  { title: 'LocalAI - DSH', href: 'https://ai.ocha.ng', img: require('@site/static/img/links/deepseek.png').default, alt: 'LocalAI - DSH' }
 ];
 
 const IndexPage: React.FC = () => {
